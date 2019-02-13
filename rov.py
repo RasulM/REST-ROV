@@ -8,6 +8,7 @@ import pigpio #GPIO library
 LeftMotor=4 #pin 7
 RightMotor=14 #pin8
 UpMotor=5#pin
+Claw= 9#pin
 
 
 pi = pigpio.pi();
@@ -123,9 +124,14 @@ def still():
 
 def openclaw():
     print("Open")
-    
+    pi.set_servo_pulsewidth(RightMotor, 1300)
+    time.sleep(5)
+    pi.set_servo_pulsewidth(RightMotor, 1500)
 def closeclaw():
     print("Close")
+    pi.set_servo_pulsewidth(RightMotor, 1700)
+    time.sleep(5)
+    pi.set_servo_pulsewidth(RightMotor, 1500)
     
     
 #leftstickFBLR BClawOC RTUp LTDown
