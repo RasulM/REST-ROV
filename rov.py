@@ -7,8 +7,8 @@ import pigpio #GPIO library
 
 LeftMotor=4 #pin 7
 RightMotor=14 #pin8
-UpMotor=5#pin
-Claw= 9#pin
+UpMotor=24#pin18
+Claw= 23#pin16
 
 
 pi = pigpio.pi();
