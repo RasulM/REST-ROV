@@ -48,7 +48,7 @@ for event in gamepad.read_loop():
             #    print("Y")
                 
             if event.code == bBtn:
-                print("B lit fm")
+                print("B")
                 rov.closeclaw()
                 
             elif event.code == aBtn:
@@ -72,6 +72,8 @@ for event in gamepad.read_loop():
             #    print("select")
 
             elif event.code == lTrig:
-                print("left trigger gam")
+                print("Down")
+                rov.down
             elif event.code == rTrig:
-                print("right trigger tduyis")
+                print("Up")
+                rov.up
