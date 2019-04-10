@@ -9,6 +9,7 @@ LeftMotor=4 #pin 7
 RightMotor=14 #pin8
 UpMotor=24#pin18
 Claw= 23#pin16
+En= 22#pin15
 
 
 pi = pigpio.pi();
@@ -124,14 +125,16 @@ def still():
 
 def openclaw():
     print("Open")
-    pi.set_servo_pulsewidth(RightMotor, 1300)
-    time.sleep(5)
-    pi.set_servo_pulsewidth(RightMotor, 1500)
+    pi.write(Claw, 0)
+    pi.write(En,1)
+    time.sleep(2)
+    pi.write(En,0)
 def closeclaw():
     print("Close")
-    pi.set_servo_pulsewidth(RightMotor, 1700)
-    time.sleep(5)
-    pi.set_servo_pulsewidth(RightMotor, 1500)
+    pi.write(Claw, 1)
+    pi.write(En,1)
+    time.sleep(2)
+    pi.write(En,0)
     
     
 #leftstickFBLR BClawOC RTUp LTDown
