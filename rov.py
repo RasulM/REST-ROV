@@ -8,8 +8,8 @@ import pigpio #GPIO library
 LeftMotor=4 #pin 7
 RightMotor=14 #pin8
 UpMotor=24#pin18
-Claw= 23#pin16
-En= 22#pin15
+Claw= 23#pin16 -> m2
+En= 22#pin15 -> e2
 
 
 pi = pigpio.pi();
@@ -138,4 +138,4 @@ def closeclaw():
     
     
 #leftstickFBLR BClawOC RTUp LTDown
-forward()
+
